@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rOH-JG-GGQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cities View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CitiesViewController" id="BYZ-38-t0r" customClass="CitiesViewController" customModule="Metaweather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8LZ-Hd-w1n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8LZ-Hd-w1n" secondAttribute="bottom" id="Som-dr-EKk"/>
+                            <constraint firstItem="8LZ-Hd-w1n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ulf-IQ-Txh"/>
+                            <constraint firstItem="8LZ-Hd-w1n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oje-NZ-ZWo"/>
+                            <constraint firstItem="8LZ-Hd-w1n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yFk-nf-FO3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cyq-5C-wPB"/>
+                    <connections>
+                        <outlet property="citiesTableView" destination="8LZ-Hd-w1n" id="C7b-4t-dNR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="111.83035714285714"/>
+        </scene>
+        <!--City Forecast View Controller-->
+        <scene sceneID="6Du-Of-cgm">
+            <objects>
+                <viewController storyboardIdentifier="CityForecastViewController" id="Jl4-g7-fzP" customClass="CityForecastViewController" customModule="Metaweather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iin-GH-OYG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-Uu-vok">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tyh-Nn-Nzl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qdi-Uu-vok" firstAttribute="top" secondItem="iin-GH-OYG" secondAttribute="top" id="GCp-3N-MQc"/>
+                            <constraint firstAttribute="bottom" secondItem="qdi-Uu-vok" secondAttribute="bottom" id="JxV-3i-S1D"/>
+                            <constraint firstItem="qdi-Uu-vok" firstAttribute="leading" secondItem="Tyh-Nn-Nzl" secondAttribute="leading" id="eRn-gW-uXm"/>
+                            <constraint firstItem="qdi-Uu-vok" firstAttribute="trailing" secondItem="Tyh-Nn-Nzl" secondAttribute="trailing" id="l2V-kS-2vt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="forecastDaysTableView" destination="qdi-Uu-vok" id="eaR-5I-bFx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqr-5u-pQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.7391304347827" y="111.83035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LP8-iL-Ld2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOH-JG-GGQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0XJ-Az-0l9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7QP-eC-7SH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cyb-pr-U1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

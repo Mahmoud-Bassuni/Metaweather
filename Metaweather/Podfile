@@ -8,6 +8,7 @@ target 'Metaweather' do
   # Pods for Metaweather
         pod 'RxSwift', '5.1.1'
         pod 'RxCocoa', '5.1.1'
+        pod 'SVProgressHUD'
   target 'MetaweatherTests' do
     inherit! :search_paths
     # Pods for testing
