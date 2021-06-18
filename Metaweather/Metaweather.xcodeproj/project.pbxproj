@@ -14,7 +14,6 @@
 		B6885DB0267CC4A700C65993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6885DAF267CC4A700C65993 /* Assets.xcassets */; };
 		B6885DB3267CC4A700C65993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6885DB1267CC4A700C65993 /* LaunchScreen.storyboard */; };
 		B6885DBE267CC4A700C65993 /* MetaweatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6885DBD267CC4A700C65993 /* MetaweatherTests.swift */; };
-		B6885DC9267CC4A800C65993 /* MetaweatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6885DC8267CC4A800C65993 /* MetaweatherUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +46,6 @@
 		B6885DBD267CC4A700C65993 /* MetaweatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaweatherTests.swift; sourceTree = "<group>"; };
 		B6885DBF267CC4A700C65993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6885DC4267CC4A800C65993 /* MetaweatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaweatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6885DC8267CC4A800C65993 /* MetaweatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaweatherUITests.swift; sourceTree = "<group>"; };
-		B6885DCA267CC4A800C65993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +78,6 @@
 			children = (
 				B6885DA5267CC4A700C65993 /* Metaweather */,
 				B6885DBC267CC4A700C65993 /* MetaweatherTests */,
-				B6885DC7267CC4A800C65993 /* MetaweatherUITests */,
 				B6885DA4267CC4A700C65993 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,15 +113,6 @@
 				B6885DBF267CC4A700C65993 /* Info.plist */,
 			);
 			path = MetaweatherTests;
-			sourceTree = "<group>";
-		};
-		B6885DC7267CC4A800C65993 /* MetaweatherUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B6885DC8267CC4A800C65993 /* MetaweatherUITests.swift */,
-				B6885DCA267CC4A800C65993 /* Info.plist */,
-			);
-			path = MetaweatherUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6885DC9267CC4A800C65993 /* MetaweatherUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
