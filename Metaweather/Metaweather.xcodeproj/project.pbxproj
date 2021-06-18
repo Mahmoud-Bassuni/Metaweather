@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,14 @@
 		B6885DB0267CC4A700C65993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6885DAF267CC4A700C65993 /* Assets.xcassets */; };
 		B6885DB3267CC4A700C65993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6885DB1267CC4A700C65993 /* LaunchScreen.storyboard */; };
 		B6885DBE267CC4A700C65993 /* MetaweatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6885DBD267CC4A700C65993 /* MetaweatherTests.swift */; };
+		B689B96E267CDB60002974B0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B96D267CDB60002974B0 /* APIClient.swift */; };
+		B689B976267CDB6D002974B0 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B975267CDB6D002974B0 /* NetworkClient.swift */; };
+		B689B97B267CDB9A002974B0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B97A267CDB9A002974B0 /* Service.swift */; };
+		B689B981267CDBB5002974B0 /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B980267CDBB5002974B0 /* HTTPNetworkError.swift */; };
+		B689B989267CDBC0002974B0 /* HTTPNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B988267CDBC0002974B0 /* HTTPNetworkResponse.swift */; };
+		B689B98E267CDBCB002974B0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B98D267CDBCB002974B0 /* HTTPMethod.swift */; };
+		B689B993267CDBD6002974B0 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B992267CDBD6002974B0 /* NetworkLogger.swift */; };
+		B689B999267CE390002974B0 /* Encodable+toDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689B998267CE390002974B0 /* Encodable+toDictionary.swift */; };
 		B6F39459442056B08510FD11 /* Pods_Metaweather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF035B8C831C4A9E46237F2D /* Pods_Metaweather.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +59,14 @@
 		B6885DBD267CC4A700C65993 /* MetaweatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaweatherTests.swift; sourceTree = "<group>"; };
 		B6885DBF267CC4A700C65993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6885DC4267CC4A800C65993 /* MetaweatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaweatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B689B96D267CDB60002974B0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B689B975267CDB6D002974B0 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		B689B97A267CDB9A002974B0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B689B980267CDBB5002974B0 /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
+		B689B988267CDBC0002974B0 /* HTTPNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkResponse.swift; sourceTree = "<group>"; };
+		B689B98D267CDBCB002974B0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B689B992267CDBD6002974B0 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		B689B998267CE390002974B0 /* Encodable+toDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+toDictionary.swift"; sourceTree = "<group>"; };
 		DF035B8C831C4A9E46237F2D /* Pods_Metaweather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metaweather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C89EC02FF96003DFBD6A5B /* Pods-Metaweather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metaweather.debug.xcconfig"; path = "Target Support Files/Pods-Metaweather/Pods-Metaweather.debug.xcconfig"; sourceTree = "<group>"; };
 		EB3D3ACBA6D4174F76EF05EA /* Pods_MetaweatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaweatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +116,6 @@
 				19969A38AF7A288677DDC60F /* Pods-MetaweatherTests.debug.xcconfig */,
 				600C959FE1BF7F837034D67B /* Pods-MetaweatherTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,8 +143,8 @@
 		B6885DA5267CC4A700C65993 /* Metaweather */ = {
 			isa = PBXGroup;
 			children = (
-				B6885DA6267CC4A700C65993 /* AppDelegate.swift */,
-				B6885DA8267CC4A700C65993 /* SceneDelegate.swift */,
+				B689B962267CDAF7002974B0 /* App */,
+				B689B966267CDB34002974B0 /* API Client */,
 				B6885DAA267CC4A700C65993 /* ViewController.swift */,
 				B6885DAC267CC4A700C65993 /* Main.storyboard */,
 				B6885DAF267CC4A700C65993 /* Assets.xcassets */,
@@ -146,6 +161,70 @@
 				B6885DBF267CC4A700C65993 /* Info.plist */,
 			);
 			path = MetaweatherTests;
+			sourceTree = "<group>";
+		};
+		B689B962267CDAF7002974B0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B6885DA8267CC4A700C65993 /* SceneDelegate.swift */,
+				B6885DA6267CC4A700C65993 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B689B966267CDB34002974B0 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				B689B96C267CDB53002974B0 /* Networking */,
+				B689B968267CDB4B002974B0 /* Models */,
+				B689B967267CDB43002974B0 /* API */,
+				B689B96D267CDB60002974B0 /* APIClient.swift */,
+				B689B975267CDB6D002974B0 /* NetworkClient.swift */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		B689B967267CDB43002974B0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B689B968267CDB4B002974B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B689B96C267CDB53002974B0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B689B97F267CDBA4002974B0 /* Service */,
+				B689B997267CE37F002974B0 /* Encoding */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B689B97F267CDBA4002974B0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B689B97A267CDB9A002974B0 /* Service.swift */,
+				B689B980267CDBB5002974B0 /* HTTPNetworkError.swift */,
+				B689B988267CDBC0002974B0 /* HTTPNetworkResponse.swift */,
+				B689B98D267CDBCB002974B0 /* HTTPMethod.swift */,
+				B689B992267CDBD6002974B0 /* NetworkLogger.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B689B997267CE37F002974B0 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				B689B998267CE390002974B0 /* Encodable+toDictionary.swift */,
+			);
+			path = Encoding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,9 +424,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B689B999267CE390002974B0 /* Encodable+toDictionary.swift in Sources */,
+				B689B993267CDBD6002974B0 /* NetworkLogger.swift in Sources */,
 				B6885DAB267CC4A700C65993 /* ViewController.swift in Sources */,
+				B689B981267CDBB5002974B0 /* HTTPNetworkError.swift in Sources */,
+				B689B976267CDB6D002974B0 /* NetworkClient.swift in Sources */,
 				B6885DA7267CC4A700C65993 /* AppDelegate.swift in Sources */,
 				B6885DA9267CC4A700C65993 /* SceneDelegate.swift in Sources */,
+				B689B98E267CDBCB002974B0 /* HTTPMethod.swift in Sources */,
+				B689B989267CDBC0002974B0 /* HTTPNetworkResponse.swift in Sources */,
+				B689B96E267CDB60002974B0 /* APIClient.swift in Sources */,
+				B689B97B267CDB9A002974B0 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
