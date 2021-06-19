@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>BASE_URL</key>
+	<string>$(BASE_URL)</string>
+	<key>HOST_URL</key>
+	<string>$(HOST_URL)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

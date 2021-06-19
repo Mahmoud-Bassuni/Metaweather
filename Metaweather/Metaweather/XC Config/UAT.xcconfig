@@ -1,0 +1,13 @@
+//
+//  UAT.xcconfig
+//  Metaweather
+//
+//  Created by Bassuni on 19/06/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+BASE_URL=www.metaweather.com/api/
+HOST_URL=www.metaweather.com
+#include "Pods/Target Support Files/Pods-Metaweather/Pods-Metaweather.debug.xcconfig"
+#include "Pods/Target Support Files/Pods-Metaweather/Pods-Metaweather.release.xcconfig"
