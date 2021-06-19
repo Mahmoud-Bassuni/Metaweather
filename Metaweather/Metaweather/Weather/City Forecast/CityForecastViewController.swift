@@ -16,10 +16,10 @@ class CityForecastViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     var viewModel: CityForecastViewModel!
-    
+    var cityName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Forecast"
+        title = cityName
         forecastDaysTableView.tableFooterView = UIView() // ui of table
         viewModelConfig()
         setupTableViewDataSource()
@@ -28,7 +28,7 @@ class CityForecastViewController: UIViewController {
     
     func setupTableViewDataSource() {
         viewModel.getCityForecastInfo()
-        viewModel.forecastInfo.bind(to: forecastDaysTableView!.rx.items) { tableView, index, element in
+        viewModel.forecastInfo.compactMap{$0}.bind(to: forecastDaysTableView!.rx.items) { tableView, index, element in
             let cell = UITableViewCell()
             cell.textLabel?.text = element?.applicableDate
             return cell
@@ -39,7 +39,7 @@ class CityForecastViewController: UIViewController {
         forecastDaysTableView!.rx
             .modelSelected(CityUIModel.self)
             .subscribe(onNext: { [weak self] city in
-                self?.viewModel.coordinator?.cityForecast(cityId: city.id)
+                self?.viewModel.coordinator?.cityForecast(city: city)
             })
             .disposed(by: disposeBag)
     }

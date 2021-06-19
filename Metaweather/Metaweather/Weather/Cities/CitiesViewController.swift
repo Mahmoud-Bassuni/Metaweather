@@ -24,7 +24,7 @@ class CitiesViewController: UIViewController {
     }
     
     func setupTableViewDataSource() {
-        viewModel.cities.filter({$0.count > 0}).bind(to: citiesTableView!.rx.items) { tableView, index, element in
+        viewModel.cities.compactMap{$0}.bind(to: citiesTableView!.rx.items) { tableView, index, element in
             let cell = UITableViewCell()
             cell.textLabel?.text = element?.name
             return cell
@@ -35,7 +35,7 @@ class CitiesViewController: UIViewController {
         citiesTableView!.rx
             .modelSelected(CityUIModel.self)
             .subscribe(onNext: { [weak self] city in
-                self?.viewModel.coordinator?.cityForecast(cityId: city.id)
+                self?.viewModel.coordinator?.cityForecast(city: city)
             })
             .disposed(by: disposeBag)
     }

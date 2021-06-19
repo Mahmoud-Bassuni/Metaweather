@@ -14,7 +14,7 @@ class CityForecastViewModel {
     private let apiClient: WeatherAPIType
     let isLoading = PublishSubject<Bool>()
     let apiError = PublishSubject<HTTPNetworkError?>()
-    private(set) var forecastInfo = BehaviorRelay<[ConsolidatedWeather?]>(value: [])
+    private(set) var forecastInfo = BehaviorRelay<[CityForecastModel?]>(value: [])
     private let disposeBag = DisposeBag()
     private let cityId: String
     
@@ -30,7 +30,11 @@ class CityForecastViewModel {
         response.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] Info in
                 guard let self = self else { return }
-                self.forecastInfo.accept(Info.consolidatedWeather)
+                var consolidatedWeather : [CityForecastModel] = []
+                for item in Info.consolidatedWeather {
+                    consolidatedWeather.append(CityForecastModel(consolidatedWeather: item))
+                }
+                self.forecastInfo.accept(consolidatedWeather)
                 self.isLoading.onNext(false)
             }, onError: { [weak self] error in
                 guard let self = self else { return }

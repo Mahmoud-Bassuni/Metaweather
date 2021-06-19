@@ -36,6 +36,10 @@
 		B689BA18267D4C00002974B0 /* CityForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689BA17267D4C00002974B0 /* CityForecastModel.swift */; };
 		B689BA1D267D5610002974B0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689BA1C267D5610002974B0 /* WeatherAPI.swift */; };
 		B689BA33267D628A002974B0 /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689BA32267D628A002974B0 /* Reactive+Extension.swift */; };
+		B691E322267DD9FD00537BB1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B691E321267DD9FD00537BB1 /* String+Extension.swift */; };
+		B691E32A267DDB2900537BB1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B691E329267DDB2900537BB1 /* Date+Extension.swift */; };
+		B691E333267DE1E800537BB1 /* CityForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B691E331267DE1E800537BB1 /* CityForecastTableViewCell.swift */; };
+		B691E334267DE1E800537BB1 /* CityForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B691E332267DE1E800537BB1 /* CityForecastTableViewCell.xib */; };
 		B6F39459442056B08510FD11 /* Pods_Metaweather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF035B8C831C4A9E46237F2D /* Pods_Metaweather.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +97,10 @@
 		B689BA17267D4C00002974B0 /* CityForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityForecastModel.swift; sourceTree = "<group>"; };
 		B689BA1C267D5610002974B0 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		B689BA32267D628A002974B0 /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
+		B691E321267DD9FD00537BB1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B691E329267DDB2900537BB1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		B691E331267DE1E800537BB1 /* CityForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityForecastTableViewCell.swift; sourceTree = "<group>"; };
+		B691E332267DE1E800537BB1 /* CityForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityForecastTableViewCell.xib; sourceTree = "<group>"; };
 		DF035B8C831C4A9E46237F2D /* Pods_Metaweather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metaweather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C89EC02FF96003DFBD6A5B /* Pods-Metaweather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metaweather.debug.xcconfig"; path = "Target Support Files/Pods-Metaweather/Pods-Metaweather.debug.xcconfig"; sourceTree = "<group>"; };
 		EB3D3ACBA6D4174F76EF05EA /* Pods_MetaweatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaweatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +331,8 @@
 			children = (
 				B689B9F1267D4400002974B0 /* UIViewController+Extension.swift */,
 				B689BA32267D628A002974B0 /* Reactive+Extension.swift */,
+				B691E321267DD9FD00537BB1 /* String+Extension.swift */,
+				B691E329267DDB2900537BB1 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,11 +349,29 @@
 		B689BA06267D4BA8002974B0 /* City Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				B691E32F267DE19D00537BB1 /* Adapters */,
 				B689BA07267D4BCA002974B0 /* CityForecastViewController.swift */,
 				B689BA12267D4BF3002974B0 /* CityForecastViewModel.swift */,
 				B689BA17267D4C00002974B0 /* CityForecastModel.swift */,
 			);
 			path = "City Forecast";
+			sourceTree = "<group>";
+		};
+		B691E32F267DE19D00537BB1 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				B691E330267DE1AF00537BB1 /* Cells */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		B691E330267DE1AF00537BB1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B691E331267DE1E800537BB1 /* CityForecastTableViewCell.swift */,
+				B691E332267DE1E800537BB1 /* CityForecastTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6885DB3267CC4A700C65993 /* LaunchScreen.storyboard in Resources */,
+				B691E334267DE1E800537BB1 /* CityForecastTableViewCell.xib in Resources */,
 				B6885DB0267CC4A700C65993 /* Assets.xcassets in Resources */,
 				B6885DAE267CC4A700C65993 /* Weather.storyboard in Resources */,
 			);
@@ -543,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B691E322267DD9FD00537BB1 /* String+Extension.swift in Sources */,
 				B689B999267CE390002974B0 /* Encodable+toDictionary.swift in Sources */,
 				B689B9EC267D42A2002974B0 /* CityCoordinator.swift in Sources */,
 				B689B993267CDBD6002974B0 /* NetworkLogger.swift in Sources */,
@@ -550,6 +580,7 @@
 				B689B981267CDBB5002974B0 /* HTTPNetworkError.swift in Sources */,
 				B689B9D3267D0AAF002974B0 /* CityModel.swift in Sources */,
 				B689BA13267D4BF3002974B0 /* CityForecastViewModel.swift in Sources */,
+				B691E333267DE1E800537BB1 /* CityForecastTableViewCell.swift in Sources */,
 				B689B9C1267D0406002974B0 /* CitiesViewModel.swift in Sources */,
 				B689B976267CDB6D002974B0 /* NetworkClient.swift in Sources */,
 				B6885DA7267CC4A700C65993 /* AppDelegate.swift in Sources */,
@@ -557,6 +588,7 @@
 				B689B9A8267CFD2D002974B0 /* Config.swift in Sources */,
 				B689B98E267CDBCB002974B0 /* HTTPMethod.swift in Sources */,
 				B689B9B2267D0212002974B0 /* CityEnum.swift in Sources */,
+				B691E32A267DDB2900537BB1 /* Date+Extension.swift in Sources */,
 				B689B989267CDBC0002974B0 /* HTTPNetworkResponse.swift in Sources */,
 				B689B96E267CDB60002974B0 /* APIClient.swift in Sources */,
 				B689B9E7267D4294002974B0 /* AppCoordinator.swift in Sources */,

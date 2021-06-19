@@ -25,12 +25,13 @@ class CityCoordinator: Coordinator   {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func cityForecast(cityId : String) {
+    func cityForecast(city: CityUIModel) {
         let vc : CityForecastViewController = .instantiate(storyboard: "Weather")
         let networkClient = NetworkClient(baseUrl: Config().baseURL)
-        let viewModel = CityForecastViewModel(apiClient: WeatherAPI(networkClient: networkClient), cityId: cityId)
+        let viewModel = CityForecastViewModel(apiClient: WeatherAPI(networkClient: networkClient), cityId: city.id)
         viewModel.coordinator = self
         vc.viewModel = viewModel
+        vc.cityName = city.name
         navigationController.pushViewController(vc, animated: false)
     }
     

@@ -8,15 +8,14 @@
 
 import RxSwift
 import RxCocoa
-import SVProgressHUD
 
 extension Reactive where Base: UIViewController {
     var showLoader: Binder<Bool> {
         return Binder(self.base) { (viewController, showLoader) in
             if showLoader {
-                SVProgressHUD.show(withStatus: "")
+                viewController.showLoader()
             } else {
-                SVProgressHUD.dismiss()
+                viewController.hideLoader()
             }
         }
     }
