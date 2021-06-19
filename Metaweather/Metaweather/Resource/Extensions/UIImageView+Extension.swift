@@ -9,16 +9,17 @@ import Foundation
 import Kingfisher
 
 extension UIImageView {
+    
     func setImage(path: String) {
         if let url = URL(string: path) {
             self.kf.indicatorType = .activity
             self.kf.setImage(
-                    with: url,
-                    options: [
-                        .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(1)),
-                        .cacheOriginalImage
+                with: url,
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
                 ])
-            }
+        }
     }
 }

@@ -20,12 +20,12 @@ class CityForecastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = cityName
-        forecastDaysTableView.tableFooterView = UIView() // ui of table
         viewModelConfig()
         setupTableView()
     }
     
     func setupTableView(){
+        forecastDaysTableView.tableFooterView = UIView() // ui of table
         forecastDaysTableView.register(UINib.init(nibName: "CityForecastTableViewCell", bundle: nil), forCellReuseIdentifier: CityForecastTableViewCell.identifier)
         setupTableViewDataSource()
         setupTableViewDelegate()
@@ -50,9 +50,9 @@ class CityForecastViewController: UIViewController {
     
     func setupTableViewDelegate() {
         forecastDaysTableView!.rx
-            .modelSelected(CityUIModel.self)
-            .subscribe(onNext: { [weak self] city in
-                self?.viewModel.coordinator?.cityForecast(city: city)
+            .modelSelected(ConsolidatedWeather.self)
+            .subscribe(onNext: { [weak self] info in
+                self?.viewModel.coordinator?.dayForecastDetails(model: CityForecastModel(consolidatedWeather: info))
             })
             .disposed(by: disposeBag)
     }

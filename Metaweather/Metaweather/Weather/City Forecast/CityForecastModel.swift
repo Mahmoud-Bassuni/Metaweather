@@ -9,14 +9,9 @@ import Foundation
 
 struct CityForecastModel {
     let id: Int
-    let weatherStateName, weatherStateAbbr, windDirectionCompass, created: String
-    let applicableDate: String
-    let minTemp, maxTemp, windSpeed: Double
-    let windDirection, airPressure: Double
-    let humidity: Int
-    let visibility: Double
-    let predictability: Int
-    let imageURL, theTemp: String
+    let weatherStateName, weatherStateAbbr, windDirectionCompass, applicableDate, created: String
+    let humidity, visibility, airPressure: String
+    let imageURL, minTemp, maxTemp, theTemp: String
     
     init(consolidatedWeather: ConsolidatedWeather) {
         id = consolidatedWeather.id
@@ -25,15 +20,12 @@ struct CityForecastModel {
         windDirectionCompass = consolidatedWeather.windDirectionCompass
         created = consolidatedWeather.created
         applicableDate = consolidatedWeather.applicableDate.getDate(format: "yyyy-MM-dd")?.getDay() ?? consolidatedWeather.applicableDate
-        minTemp = consolidatedWeather.minTemp
-        maxTemp = consolidatedWeather.maxTemp
-        theTemp = String(format: "%.0f", consolidatedWeather.theTemp)
-        windSpeed = consolidatedWeather.windSpeed
-        windDirection = consolidatedWeather.windDirection
-        airPressure = consolidatedWeather.airPressure
-        humidity = consolidatedWeather.humidity
-        visibility = consolidatedWeather.visibility
-        predictability = consolidatedWeather.predictability
+        minTemp = "min: \(String(format: "%.0f", consolidatedWeather.minTemp))°C"
+        maxTemp = "Max: \(String(format: "%.0f", consolidatedWeather.maxTemp))°C"
+        theTemp = "\(String(format: "%.0f", consolidatedWeather.theTemp))°C"
+        airPressure = "\(consolidatedWeather.airPressure)"
+        humidity = "\(consolidatedWeather.humidity)"
+        visibility = "\(consolidatedWeather.visibility)"
         imageURL = "\(Config().hostURL)/static/img/weather/png/\(consolidatedWeather.weatherStateAbbr).png"
     }
 }

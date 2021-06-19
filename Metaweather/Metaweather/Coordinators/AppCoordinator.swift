@@ -20,7 +20,7 @@ class AppCoordinator : Coordinator {
     
     func start() {
         // preparing root view
-        let myCoordinator = CityCoordinator(navigationController: navigationController)
+        let myCoordinator = WeatherCoordinator(navigationController: navigationController)
         addCoordinator(coordinator: myCoordinator)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class CitiesViewController: UIViewController {
+    
     @IBOutlet weak var citiesTableView: UITableView!
     
     let disposeBag = DisposeBag()
@@ -18,6 +19,10 @@ class CitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Cities"
+        setupTableView()
+    }
+    
+    func setupTableView() {
         citiesTableView.tableFooterView = UIView() // ui of table
         setupTableViewDataSource()
         setupTableViewDelegate()

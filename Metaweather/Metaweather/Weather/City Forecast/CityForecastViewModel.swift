@@ -10,7 +10,7 @@ import RxRelay
 import RxSwift
 
 class CityForecastViewModel {
-    weak var coordinator: CityCoordinator?
+    weak var coordinator: WeatherCoordinator?
     private let apiClient: WeatherAPIType
     let isLoading = PublishSubject<Bool>()
     let apiError = PublishSubject<HTTPNetworkError?>()

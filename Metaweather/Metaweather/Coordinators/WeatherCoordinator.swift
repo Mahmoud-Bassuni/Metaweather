@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CityCoordinator: Coordinator   {
+class WeatherCoordinator: Coordinator   {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     
@@ -35,7 +35,15 @@ class CityCoordinator: Coordinator   {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    func dayForecastDetails(model: CityForecastModel) {
+        let vc : DayForecastDetailsViewController = .instantiate(storyboard: "Weather")
+        let viewModel = DayForecastDetailsViewModel(model: model)
+        vc.viewModel = viewModel
+        vc.dayName = model.applicableDate
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
     deinit {
-        print("CityCoordinator ---> deinit")
+        print("WeatherCoordinator ---> deinit")
     }
 }

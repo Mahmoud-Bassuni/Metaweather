@@ -102,9 +102,6 @@ class NetworkClient: NSObject, NetworkClientType {
                          value: value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
         }
         var request = URLRequest(url: (urlComponents?.url!)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
-        
-//        self.headers["X-Locale"] = LanguageManager.shared.selectedLanguage.code
-//        self.headers.merge(SessionManager.shared.getHeaderData()) { $1 }
         request.httpMethod = httpMethod.rawValue
         request.allHTTPHeaderFields = headers
         request.httpBody = body?.toData()

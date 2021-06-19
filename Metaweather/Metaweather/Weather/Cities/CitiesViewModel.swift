@@ -12,7 +12,7 @@ import RxCocoa
 class CitiesViewModel {
    
     private(set) var cities = BehaviorRelay<[CityUIModel?]>(value: [])
-    weak var coordinator: CityCoordinator?
+    weak var coordinator: WeatherCoordinator?
     
     init() {
         cities.accept([CityUIModel(city: CityModel(name: City.sofia.rawValue, id: City.sofia.id)),
