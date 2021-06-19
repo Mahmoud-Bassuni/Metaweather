@@ -6,22 +6,30 @@
 //
 
 import UIKit
-
+import Kingfisher
 class CityForecastTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var iconeImageView: UIImageView!
     @IBOutlet weak var temprtureLable: UILabel!
     @IBOutlet weak var dateLable: UILabel!
+    @IBOutlet weak var forecastStatus: UILabel!
+    @IBOutlet weak var containnerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setupUI()
     }
     
+    func setupUI() {
+        containnerView.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        containnerView.layer.borderWidth = 1
+        containnerView.layer.cornerRadius = 10
+    }
+    
+    func bindCell(model : CityForecastModel) {
+        dateLable.text = model.applicableDate
+        temprtureLable.text = model.theTemp
+        forecastStatus.text = model.weatherStateName
+        iconeImageView.setImage(path:model.imageURL)
+    }
 }

@@ -14,7 +14,7 @@ class CityForecastViewModel {
     private let apiClient: WeatherAPIType
     let isLoading = PublishSubject<Bool>()
     let apiError = PublishSubject<HTTPNetworkError?>()
-    private(set) var forecastInfo = BehaviorRelay<[CityForecastModel?]>(value: [])
+    private(set) var forecastInfo = BehaviorRelay<[ConsolidatedWeather?]>(value: [])
     private let disposeBag = DisposeBag()
     private let cityId: String
     
@@ -34,12 +34,17 @@ class CityForecastViewModel {
                 for item in Info.consolidatedWeather {
                     consolidatedWeather.append(CityForecastModel(consolidatedWeather: item))
                 }
-                self.forecastInfo.accept(consolidatedWeather)
+                self.forecastInfo.accept(Info.consolidatedWeather)
                 self.isLoading.onNext(false)
             }, onError: { [weak self] error in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
                 self.apiError.onNext(error as? HTTPNetworkError)
             }).disposed(by: disposeBag)
+    }
+    
+    func forecastInfoAtIndex(_ index: Int) -> CityForecastModel {
+        let forecastInfoPerDay = forecastInfo.value[index]
+        return CityForecastModel(consolidatedWeather: forecastInfoPerDay!)
     }
 }

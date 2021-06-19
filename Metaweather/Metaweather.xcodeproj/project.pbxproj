@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00EF483FFD937673CDC7667B /* Pods_MetaweatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3D3ACBA6D4174F76EF05EA /* Pods_MetaweatherTests.framework */; };
+		B6513CE7267DF491002A2304 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6513CE6267DF491002A2304 /* UITableViewCell+Extension.swift */; };
+		B6513D0B267E0AC4002A2304 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6513D0A267E0AC4002A2304 /* UIImageView+Extension.swift */; };
 		B6885DA7267CC4A700C65993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6885DA6267CC4A700C65993 /* AppDelegate.swift */; };
 		B6885DAB267CC4A700C65993 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6885DAA267CC4A700C65993 /* CitiesViewController.swift */; };
 		B6885DAE267CC4A700C65993 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6885DAC267CC4A700C65993 /* Weather.storyboard */; };
@@ -64,6 +66,8 @@
 		02E16D758571F2107EA78D6A /* Pods-Metaweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metaweather.release.xcconfig"; path = "Target Support Files/Pods-Metaweather/Pods-Metaweather.release.xcconfig"; sourceTree = "<group>"; };
 		19969A38AF7A288677DDC60F /* Pods-MetaweatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaweatherTests.debug.xcconfig"; path = "Target Support Files/Pods-MetaweatherTests/Pods-MetaweatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		600C959FE1BF7F837034D67B /* Pods-MetaweatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaweatherTests.release.xcconfig"; path = "Target Support Files/Pods-MetaweatherTests/Pods-MetaweatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6513CE6267DF491002A2304 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		B6513D0A267E0AC4002A2304 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B6885DA3267CC4A700C65993 /* Metaweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metaweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6885DA6267CC4A700C65993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6885DAA267CC4A700C65993 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 				B689BA32267D628A002974B0 /* Reactive+Extension.swift */,
 				B691E321267DD9FD00537BB1 /* String+Extension.swift */,
 				B691E329267DDB2900537BB1 /* Date+Extension.swift */,
+				B6513CE6267DF491002A2304 /* UITableViewCell+Extension.swift */,
+				B6513D0A267E0AC4002A2304 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,12 +585,14 @@
 				B6885DAB267CC4A700C65993 /* CitiesViewController.swift in Sources */,
 				B689B981267CDBB5002974B0 /* HTTPNetworkError.swift in Sources */,
 				B689B9D3267D0AAF002974B0 /* CityModel.swift in Sources */,
+				B6513CE7267DF491002A2304 /* UITableViewCell+Extension.swift in Sources */,
 				B689BA13267D4BF3002974B0 /* CityForecastViewModel.swift in Sources */,
 				B691E333267DE1E800537BB1 /* CityForecastTableViewCell.swift in Sources */,
 				B689B9C1267D0406002974B0 /* CitiesViewModel.swift in Sources */,
 				B689B976267CDB6D002974B0 /* NetworkClient.swift in Sources */,
 				B6885DA7267CC4A700C65993 /* AppDelegate.swift in Sources */,
 				B689B9DF267D4284002974B0 /* Coordinator.swift in Sources */,
+				B6513D0B267E0AC4002A2304 /* UIImageView+Extension.swift in Sources */,
 				B689B9A8267CFD2D002974B0 /* Config.swift in Sources */,
 				B689B98E267CDBCB002974B0 /* HTTPMethod.swift in Sources */,
 				B689B9B2267D0212002974B0 /* CityEnum.swift in Sources */,

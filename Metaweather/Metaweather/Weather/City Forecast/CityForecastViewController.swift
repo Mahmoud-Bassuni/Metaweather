@@ -22,16 +22,29 @@ class CityForecastViewController: UIViewController {
         title = cityName
         forecastDaysTableView.tableFooterView = UIView() // ui of table
         viewModelConfig()
+        setupTableView()
+    }
+    
+    func setupTableView(){
+        forecastDaysTableView.register(UINib.init(nibName: "CityForecastTableViewCell", bundle: nil), forCellReuseIdentifier: CityForecastTableViewCell.identifier)
         setupTableViewDataSource()
         setupTableViewDelegate()
     }
     
     func setupTableViewDataSource() {
+        
         viewModel.getCityForecastInfo()
-        viewModel.forecastInfo.compactMap{$0}.bind(to: forecastDaysTableView!.rx.items) { tableView, index, element in
-            let cell = UITableViewCell()
-            cell.textLabel?.text = element?.applicableDate
-            return cell
+        viewModel.forecastInfo.compactMap{$0}.bind(to: forecastDaysTableView!.rx.items) {  [weak self] tableView, index, element in
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CityForecastTableViewCell") as? CityForecastTableViewCell{
+                
+                let dayForecast = self?.viewModel?.forecastInfoAtIndex(index)
+                if let dayForecast = dayForecast {
+                    cell.bindCell(model: dayForecast)
+                }
+                
+                return cell
+            }
+            return UITableViewCell()
         }.disposed(by: disposeBag)
     }
     
@@ -46,7 +59,7 @@ class CityForecastViewController: UIViewController {
     
     func viewModelConfig() {
         viewModel.isLoading.bind(to: self.rx.showLoader).disposed(by: disposeBag)
-
+        
         viewModel.apiError.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (error) in
                 self?.alert(title: "error", message: error?.errorMessage ?? "")

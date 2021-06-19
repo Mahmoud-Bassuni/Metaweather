@@ -11,12 +11,12 @@ struct CityForecastModel {
     let id: Int
     let weatherStateName, weatherStateAbbr, windDirectionCompass, created: String
     let applicableDate: String
-    let minTemp, maxTemp, theTemp, windSpeed: Double
+    let minTemp, maxTemp, windSpeed: Double
     let windDirection, airPressure: Double
     let humidity: Int
     let visibility: Double
     let predictability: Int
-    let imageURL: String
+    let imageURL, theTemp: String
     
     init(consolidatedWeather: ConsolidatedWeather) {
         id = consolidatedWeather.id
@@ -27,13 +27,13 @@ struct CityForecastModel {
         applicableDate = consolidatedWeather.applicableDate.getDate(format: "yyyy-MM-dd")?.getDay() ?? consolidatedWeather.applicableDate
         minTemp = consolidatedWeather.minTemp
         maxTemp = consolidatedWeather.maxTemp
-        theTemp = consolidatedWeather.theTemp
+        theTemp = String(format: "%.0f", consolidatedWeather.theTemp)
         windSpeed = consolidatedWeather.windSpeed
         windDirection = consolidatedWeather.windDirection
         airPressure = consolidatedWeather.airPressure
         humidity = consolidatedWeather.humidity
         visibility = consolidatedWeather.visibility
         predictability = consolidatedWeather.predictability
-        imageURL = "\(Config().hostURL)/static/img/weather/\(consolidatedWeather.weatherStateAbbr).svg"
+        imageURL = "\(Config().hostURL)/static/img/weather/png/\(consolidatedWeather.weatherStateAbbr).png"
     }
 }
