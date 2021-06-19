@@ -24,9 +24,9 @@ Install the below pods
 ## Features
 
 - Auto layout
-- Mukti target dev , UAT , production
+- Multi target dev , UAT , production
 - Native netwrok layer
-- fast and handle all error case 
+- fast and handle all error cases
    
    
 ## Authors
